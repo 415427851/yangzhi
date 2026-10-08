@@ -1,0 +1,221 @@
+/* 肉鸡养殖场设备建设方案 — 纯文字版样式 */
+
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f7f7f5;
+  --text: #1f2328;
+  --text-soft: #5b6570;
+  --line: #e3e5e8;
+  --accent: #b4531f;
+  --accent-soft: #fbf0e8;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- 页头 ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.brand {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: 0.2px;
+}
+
+.site-header nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.site-header nav a {
+  font-size: 14px;
+  color: var(--text-soft);
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.site-header nav a:hover {
+  background: var(--bg-soft);
+  color: var(--text);
+}
+
+.site-header nav a.on {
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-weight: 600;
+}
+
+/* ---------- 正文 ---------- */
+
+.main {
+  padding-top: 44px;
+  padding-bottom: 24px;
+}
+
+section {
+  margin-bottom: 44px;
+}
+
+h1 {
+  font-size: 28px;
+  line-height: 1.4;
+  margin: 0 0 14px;
+  letter-spacing: -0.2px;
+}
+
+h2 {
+  font-size: 19px;
+  margin: 0 0 12px;
+  padding-left: 11px;
+  border-left: 3px solid var(--accent);
+  line-height: 1.5;
+}
+
+.lead {
+  font-size: 16px;
+  color: var(--text-soft);
+  margin: 0 0 4px;
+}
+
+p { margin: 0 0 14px; }
+
+ul { margin: 0 0 14px; padding-left: 22px; }
+
+li { margin-bottom: 8px; }
+
+li strong { font-weight: 600; }
+
+.note {
+  font-size: 14px;
+  color: var(--text-soft);
+  background: var(--bg-soft);
+  border-left: 3px solid var(--line);
+  padding: 12px 16px;
+  border-radius: 0 6px 6px 0;
+  margin-top: 16px;
+}
+
+/* ---------- 表格 ---------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin: 4px 0 0;
+}
+
+th, td {
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th {
+  background: var(--bg-soft);
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+tbody th {
+  background: var(--bg-soft);
+  font-weight: 600;
+  width: 30%;
+  white-space: nowrap;
+}
+
+table tbody tr:hover td { background: #fcfcfa; }
+
+/* ---------- 翻页 ---------- */
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.pager span { color: var(--text-soft); }
+
+.pager a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.pager a:hover { text-decoration: underline; }
+
+/* ---------- 页脚 ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+  padding: 22px 0 30px;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+/* ---------- 响应式 ---------- */
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .main { padding-top: 30px; }
+  h1 { font-size: 23px; }
+  h2 { font-size: 17px; }
+  .wrap { padding: 0 16px; }
+  table { font-size: 14px; }
+  th, td { padding: 8px 10px; }
+  tbody th { width: auto; white-space: normal; }
+  .site-header .wrap { justify-content: center; text-align: center; }
+}
+
+@media print {
+  .site-header, .pager, .site-footer { display: none; }
+  section { page-break-inside: avoid; }
+}
